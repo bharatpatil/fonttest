@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
-import { AppLoading } from "expo";
 
 import Roboto from "native-base/Fonts/Roboto.ttf";
 import RobotoMedium from "native-base/Fonts/Roboto_medium.ttf";
@@ -48,7 +47,9 @@ export default function App() {
     loadFont();
   }, []);
 
-  if (!isReady) return <AppLoading />;
+  if (!isReady) return <View style={styles.container}>
+    <Text>Loading...</Text>
+  </View>;
 
   const Fonts = {
     heading: "Montserrat-SemiBold",
@@ -64,12 +65,14 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={{ fontSize: 18, marginBottom: 22 }}>Default Font</Text>
+      <Text style={{ fontSize: 18, marginBottom: 22 }}>Default Font 1</Text>
       {Object.keys(Fonts).map((key) => (
         <Text key={key} style={{ fontFamily: Fonts[key] }}>
           {Fonts[key]}
         </Text>
       ))}
       <Icon name="close" style={{ fontSize: 80 }} />
+      <Ionicons name="md-checkmark-circle" size={32} color="green" />
     </View>
   );
 }
