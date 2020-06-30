@@ -1,0 +1,12 @@
+{
+  "name": "fonttest",
+  "displayName": "fonttest",
+  "expo": {
+    "name": "fonttest",
+    "slug": "fonttest",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
