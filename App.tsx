@@ -52,6 +52,8 @@ export default function App() {
   </View>;
 
   const Fonts = {
+    Roboto: "Roboto",
+    RobotoMedium: "Roboto-medium",
     heading: "Montserrat-SemiBold",
     headingBold: "Montserrat-Bold",
     subHeading: "SpaceMono-Regular",
@@ -67,7 +69,7 @@ export default function App() {
       <Text style={{ fontSize: 18, marginBottom: 22 }}>Default Font</Text>
       <Text style={{ fontSize: 18, marginBottom: 22 }}>Default Font 1</Text>
       {Object.keys(Fonts).map((key) => (
-        <Text key={key} style={{ fontFamily: Fonts[key] }}>
+        <Text key={key} style={{ fontFamily: Fonts[key], backgroundColor: '#ff0' }}>
           {Fonts[key]}
         </Text>
       ))}
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   textStyle: {
-    fontFamily: "Montserrat-SemiBold",
     fontSize: 18,
+    backgroundColor: '#ff0'
   },
 });
