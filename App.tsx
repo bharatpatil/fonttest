@@ -4,17 +4,8 @@ import { StyleSheet } from "react-native";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 
-import Roboto from "native-base/Fonts/Roboto.ttf";
-import RobotoMedium from "native-base/Fonts/Roboto_medium.ttf";
-import MontserratBold from "./assets/fonts/Montserrat-Bold.ttf";
-import MontserratLight from "./assets/fonts/Montserrat-Light.ttf";
-import MontserratMedium from "./assets/fonts/Montserrat-Medium.ttf";
-import MontserratRegular from "./assets/fonts/Montserrat-Regular.ttf";
-import MontserratSemiBold from "./assets/fonts/Montserrat-SemiBold.ttf";
-import SpaceMonoBold from "./assets/fonts/SpaceMono-Bold.ttf";
-import SpaceMonoRegular from "./assets/fonts/SpaceMono-Regular.ttf";
+import { View, Text, Icon } from "native-base";
 
-import { Root, StyleProvider, View, Text, Icon } from "native-base";
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
@@ -25,15 +16,15 @@ export default function App() {
       console.log("======= loading fonts");
       try {
         await Font.loadAsync({
-          Roboto,
-          "Roboto-medium": RobotoMedium,
-          "Montserrat-SemiBold": MontserratSemiBold,
-          "Montserrat-Regular": MontserratRegular,
-          "Montserrat-Medium": MontserratMedium,
-          "Montserrat-Bold": MontserratBold,
-          "Montserrat-Light": MontserratLight,
-          "SpaceMono-Bold": SpaceMonoBold,
-          "SpaceMono-Regular": SpaceMonoRegular,
+          Roboto: require("native-base/Fonts/Roboto.ttf"),
+          "Roboto-medium": require("native-base/Fonts/Roboto_medium.ttf"),
+          "Montserrat-SemiBold": require("./assets/fonts/Montserrat-Bold.ttf"),
+          "Montserrat-Regular": require("./assets/fonts/Montserrat-Light.ttf"),
+          "Montserrat-Medium": require("./assets/fonts/Montserrat-Medium.ttf"),
+          "Montserrat-Bold": require("./assets/fonts/Montserrat-Regular.ttf"),
+          "Montserrat-Light": require("./assets/fonts/Montserrat-SemiBold.ttf"),
+          "SpaceMono-Bold": require("./assets/fonts/SpaceMono-Bold.ttf"),
+          "SpaceMono-Regular": require("./assets/fonts/SpaceMono-Regular.ttf"),
           ...Ionicons.font,
         });
       } catch (err) {
